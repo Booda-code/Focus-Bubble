@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focus_bubble/styles/app_colors.dart';
+import 'package:focus_bubble/views/setting_view.dart';
 import 'package:focus_bubble/views/stats_view.dart';
 
 import '../widgets/custom_buttom.dart';
@@ -72,7 +73,9 @@ class HomeView extends StatelessWidget {
                 IconButton(onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => StatsView()));
                 }, icon: Icon(Icons.bar_chart, size: 32)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.settings, size: 32)),
+                IconButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsView()));
+                }, icon: Icon(Icons.settings, size: 32)),
               ],
             ),
           ],
