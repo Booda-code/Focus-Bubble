@@ -11,52 +11,73 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height: 50),
-          Text(
-            'Focus Bubble',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: AppColors.primaryColor,
-                fontFamily: 'Poppins'
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 80,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryColor.withOpacity(0.2),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: AppColors.secondaryColor.withOpacity(0.5),
+                      width: 6,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 20),
+                Text(
+                  'Focus Bubble',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryColor,
+                      fontFamily: 'Poppins'
+                  ),
+                ),
+              ],
             ),
-          ),
-          SizedBox(height: 80),
-          Text(
-            'Ready to focus?',
-            style: TextStyle(color: AppColors.primaryColor, fontSize: 20,fontFamily: 'Poppins'),
-          ),
-          SizedBox(height: 20),
-          CustomBottom(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => FocusSessionView()));
-            },
-            text: 'Start Session',
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+            SizedBox(height: 80),
+            Text(
+              'Ready to focus?',
+              style: TextStyle(color: AppColors.primaryColor, fontSize: 20,fontFamily: 'Poppins'),
             ),
-            backgroundColor: AppColors.primaryColor,
-          ),
-          SizedBox(height: 40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => StatsView()));
-              }, icon: Icon(Icons.bar_chart, size: 32)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.settings, size: 32)),
-            ],
-          ),
-        ],
+            SizedBox(height: 20),
+            CustomBottom(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FocusSessionView()));
+              },
+              text: 'Start Session',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+              backgroundColor: AppColors.primaryColor,
+            ),
+            SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => StatsView()));
+                }, icon: Icon(Icons.bar_chart, size: 32)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.settings, size: 32)),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
