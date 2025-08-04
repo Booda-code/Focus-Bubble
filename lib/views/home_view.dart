@@ -39,7 +39,7 @@ class HomeView extends StatelessWidget {
                 Text(
                   'Focus Bubble',
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryColor,
                       fontFamily: 'Poppins'
