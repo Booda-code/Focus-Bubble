@@ -5,11 +5,13 @@ part 'daily_stats_model.g.dart';
 @HiveType(typeId: 1)
 class DailyStatsModel extends HiveObject {
   @HiveField(0)
-  final DateTime date;
+  DateTime date;
+
   @HiveField(1)
-  final int totalFocusTimeInMinutes;
+  int totalFocusTimeInMinutes;
+
   @HiveField(2)
-  final int sessionsCount;
+  int sessionsCount;
 
   DailyStatsModel({
     required this.date,
@@ -17,3 +19,4 @@ class DailyStatsModel extends HiveObject {
     required this.sessionsCount,
   });
 }
+
